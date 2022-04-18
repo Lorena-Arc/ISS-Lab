@@ -1,0 +1,16 @@
+@import "src/styles/variables";
+
+.#{$app-name}-input {
+  display: flex;
+  background-color: $color-white;
+  background-clip: padding-box;
+  border: 2px solid $color-borders !important;
+  appearance: none;
+  border-radius: $input-border-radius;
+  padding: $input-padding;
+  margin-bottom: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}

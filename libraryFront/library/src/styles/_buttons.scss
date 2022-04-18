@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.#{$app-name}-btn {
+  background-color: $color-buttons;
+  color: $color-white;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  height: 27px;
+}
