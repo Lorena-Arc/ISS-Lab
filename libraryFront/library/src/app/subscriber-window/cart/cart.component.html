@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="py-2 fs-16">Imprumuturile tale:</div>
+  <div class="container">
+    <div *ngFor="let book of books">
+      <app-book-subscriber [book]="book" [isCos]="true"></app-book-subscriber>
+    </div>
+  </div>
+</div>

@@ -13,4 +13,13 @@
   &:focus {
     outline: none;
   }
+
+  &__dropdown {
+      background-color: $color-white;
+      color: $color-taken;
+      margin-bottom: 15px;
+      border: none;
+      outline: none;
+      overflow-y: auto;
+  }
 }

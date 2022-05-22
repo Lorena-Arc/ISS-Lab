@@ -1,0 +1,13 @@
+<div class="d-flex flex-column align-items-center mt-5 pt-5" [formGroup]="loginForm">
+  <input class="w-40 lb-input my-5 py-1" placeholder="username" formControlName="username">
+  <input type="password" class="w-40 lb-input py-1 mb-4" placeholder="parola" formControlName="password">
+
+  <select class="w-40 lb-input__dropdown py-1" size="3" formControlName="role">
+    <option value="">CINE ESTI?</option>
+    <option *ngFor="let city of ['Abonat', 'Bibliotecar']" [ngValue]="city">
+      {{ city }}
+    </option>
+  </select>
+
+  <button class="w-40 lb-btn__auth mt-3"  (click)="tryLogin()">AUTENTIFICARE</button>
+</div>

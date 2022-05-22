@@ -6,6 +6,8 @@
 
 @import "styles/variables";
 
+@import '~ngx-toastr/toastr.css';
+
 .d-flex {
   & > [class^="col-"],
   & > [class*="col-"] {
@@ -170,4 +172,10 @@
 .bd {
   border-radius: 5px;
   border: 1px solid $color-borders;
+}
+
+.toast-bottom-center {
+  bottom: 12px;
+  margin: 0 auto;
+  left: 0;
 }

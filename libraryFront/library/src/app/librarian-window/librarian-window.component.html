@@ -6,20 +6,29 @@
   </div>
 
   <div class="mt-4 mb-3">Gestionare carti:</div>
+  <div class="row">
+    <div class="col-11 col-lg-6" [formGroup]="booksForm">
+      <div class="d-flex">
+        <input class="lb-input col-6 me-2" placeholder="cod carte" formControlName="id">
+        <button class="lb-btn__primary  col-5 ms-4" (click)="addBook()">Adaugare</button>
+      </div>
+      <div class="d-flex">
+        <input class="lb-input col-6 me-2" placeholder="titlu" formControlName="titlu">
+        <button class="lb-btn__primary col-5 ms-4" (click)="modifyBook()">Modificare</button>
+      </div>
+      <div class="d-flex">
+        <input class="lb-input col-6 me-2" placeholder="autor" formControlName="autor">
+        <button class="lb-btn__primary col-5 ms-4" (click)="deleteBook()">Stergere</button>
+      </div>
+    </div>
 
-  <div class="forms2" [formGroup]="booksForm">
-    <div class="d-flex col-11">
-      <input class="lb-input col-6 col-md-4 col-lg-2 me-2" placeholder="cod carte" formControlName="id">
-      <button class="lb-btn  col-6 col-md-4 col-lg-2 ms-4" (click)="addBook()">Adaugare</button>
-    </div>
-    <div class="d-flex col-11">
-      <input class="lb-input col-6 col-md-4 col-lg-2 me-2" placeholder="titlu" formControlName="titlu">
-      <button class="lb-btn col-6 col-md-4 col-lg-2 ms-4" (click)="modifyBook()">Modificare</button>
-    </div>
-    <div class="d-flex col-11">
-      <input class="lb-input col-6 col-md-4 col-lg-2 me-2" placeholder="autor" formControlName="autor">
-      <button class="lb-btn col-6 col-md-4 col-lg-2 ms-4" (click)="deleteBook()">Stergere</button>
+    <div class="col-0 col-lg-2"></div>
+
+    <div class="col-11 col-lg-4" [formGroup]="returnForm">
+      <div class="d-flex">
+        <input class="lb-input col-6 me-2 ms-lg-2" placeholder="cod carte" formControlName="id">
+        <button class="lb-btn__primary  col-5 ms-4 ms-lg-2" (click)="returnBook()">Returnare</button>
+      </div>
     </div>
   </div>
-
 </div>

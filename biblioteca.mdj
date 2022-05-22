@@ -8528,11 +8528,11 @@
 								"_parent": {
 									"$ref": "AAAAAAF/p+QA0srSK4M="
 								},
-								"name": "imprumut",
+								"name": "active",
 								"reference": {
 									"$ref": "AAAAAAF/p9aFebuR1uo="
 								},
-								"multiplicity": "0..1"
+								"multiplicity": "0..*"
 							}
 						},
 						{
@@ -8716,7 +8716,7 @@
 								"reference": {
 									"$ref": "AAAAAAF/p8SePLnCrLI="
 								},
-								"multiplicity": "1..*"
+								"multiplicity": "1"
 							}
 						}
 					]
@@ -10182,7 +10182,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAF/8up4mJ0hvEo="
 									},
-									"text": "1..*"
+									"text": "1"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -10414,7 +10414,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAF/8up4mJ0tq7w="
 									},
-									"text": "+imprumut"
+									"text": "+active"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -10455,7 +10455,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAF/8up4mJ0tq7w="
 									},
-									"text": "0..1"
+									"text": "0..*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -10709,12 +10709,12 @@
 										"$ref": "AAAAAAF/8QypRDDZNb0="
 									},
 									"font": "Arial;13;0",
-									"left": 752,
-									"top": 399,
+									"left": 768,
+									"top": 431,
 									"width": 47.353515625,
 									"height": 13,
-									"alpha": 0.41320916718574363,
-									"distance": 85.7962703152066,
+									"alpha": 0.5830507030821721,
+									"distance": 51.85556864985669,
 									"hostEdge": {
 										"$ref": "AAAAAAF/8up4mJ09xNY="
 									},
@@ -12974,9 +12974,9 @@
 														"$ref": "AAAAAAGAM0Q7hgu4gY8="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 91.796875,
+													"width": 86.11572265625,
 													"height": 13,
 													"text": "VizualizareCarti"
 												},
@@ -12989,7 +12989,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -14523,9 +14523,9 @@
 														"$ref": "AAAAAAGAM1Aw6g0tG88="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 89.1689453125,
+													"width": 79.67919921875,
 													"height": 13,
 													"text": "AdaugareCarte"
 												},
@@ -14538,7 +14538,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -18286,9 +18286,9 @@
 														"$ref": "AAAAAAGAM2D8LxFPZIU="
 													},
 													"font": "Arial;13;0",
-													"left": 587,
+													"left": 559,
 													"top": 272,
-													"width": 186.4052734375,
+													"width": 242.41064453125,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
@@ -18296,7 +18296,7 @@
 														"$ref": "AAAAAAGAM2D8LxFQxVc="
 													},
 													"edgePosition": 1,
-													"text": "5 : modifyBook(Carte, codCarte)"
+													"text": "5 : salvata = modifyBook(Carte, codCarte)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -19227,7 +19227,8 @@
 									"target": {
 										"$ref": "AAAAAAGAM16juBCVgm0="
 									},
-									"arguments": "Carte, codCarte"
+									"arguments": "Carte, codCarte",
+									"assignmentTarget": "salvata"
 								},
 								{
 									"_type": "UMLMessage",
@@ -19547,9 +19548,9 @@
 														"$ref": "AAAAAAGAM2aozRJPabM="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 82.64990234375,
+													"width": 72.22705078125,
 													"height": 13,
 													"text": "StergereCarte"
 												},
@@ -19562,7 +19563,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}

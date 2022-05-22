@@ -1,9 +1,11 @@
 package college.library.model;
 
+import college.library.utils.sequences.StringSequenceIDGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
 
@@ -14,11 +16,14 @@ import javax.persistence.*;
 @Table(name = "BOOKS")
 public class Carte {
     @Id
-    @GeneratedValue(generator = "SEQ_CARTE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOOK_SEQ")
     @GenericGenerator(
-            name = "SEQ_CARTE",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
+            name = "BOOK_SEQ",
+            strategy = "college.library.utils.sequences.StringSequenceIDGenerator",
+            parameters = {
+                    @Parameter(name = StringSequenceIDGenerator.VALUE_PREFIX_PARAMETER, value = "B_"),
+                    @Parameter(name = StringSequenceIDGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d")
+            })
     @Column(name = "ID", updatable = false, nullable = false)
     private String id;
 

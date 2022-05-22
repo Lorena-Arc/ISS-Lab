@@ -1,8 +1,8 @@
 <div class="d-flex row align-items-center lb-bg__primary bd mt-2 me-1 px-3 py-2" data-toggle="tooltip" title="cod unic: {{book.id}}">
-  <div class="col-5 col-lg-6">{{book.titlu}}</div>
+  <div class="col-5 col-lg-5">{{book.titlu}}</div>
   <div class="col-4 col-lg-5">{{book.autor}}</div>
-  <div *ngIf="book.statusCarte.toString() === 'INDISPONIBIL'" class="col-3 col-lg-1 jus lb-bg__taken
+  <div *ngIf="book.statusCarte.toString() === 'INDISPONIBIL'" class="col-3 col-lg-2 jus lb-bg__taken
   lb-color__white text-center ticket">{{STATUS_INDISP}}</div>
-  <div *ngIf="book.statusCarte.toString() === 'DISPONIBIL'" class="col-3 col-lg-1 lb-bg__available
+  <div *ngIf="book.statusCarte.toString() === 'DISPONIBIL'" class="col-3 col-lg-2 lb-bg__available
   lb-color__white text-center ticket">{{STATUS_DISP}}</div>
 </div>

@@ -2,7 +2,12 @@ package college.library.controller;
 
 import college.library.dto.CarteRequestDto;
 import college.library.model.Carte;
+import college.library.security.JWTUtil;
 import college.library.service.CarteService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,10 +23,19 @@ import java.util.List;
 @Slf4j
 public class LibraryController {
     private final CarteService carteService;
+    private final JWTUtil jwtUtil;
 
     @GetMapping("/librarian/books")
     public ResponseEntity<List<Carte>> getAllBooks() {
         return new ResponseEntity<>(carteService.getAllBooks(), HttpStatus.OK);
+    }
+
+    @GetMapping("/books")
+    public ResponseEntity<List<Carte>> getBooks(
+            @RequestParam(required = false) String availability
+    ) {
+        carteService.getBooks(availability);
+        return new ResponseEntity<>(carteService.getBooks(availability), HttpStatus.OK);
     }
 
     @PutMapping("/librarian/books/{bookId}")
@@ -44,4 +58,22 @@ public class LibraryController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PutMapping("/librarian/books/loans/{bookId}")
+    public ResponseEntity<Carte> returnBook(@PathVariable String bookId) {
+        return ResponseEntity.ok(carteService.returnBook(bookId));
+    }
+
+    @PutMapping("/subscriber/books/loans/{bookId}")
+    public ResponseEntity<Carte> borrowBook(@RequestHeader("Authorization") String authorizationHeader, @PathVariable String bookId) {
+        String token = authorizationHeader.substring("Bearer ".length());
+        String username = jwtUtil.getTokenSubject(token);
+        return ResponseEntity.ok(carteService.borrowBook(username, bookId));
+    }
+
+    @GetMapping("/subscriber/books/loans")
+    public ResponseEntity<List<Carte>> getLoansForUser(@RequestHeader("Authorization") String authorizationHeader) {
+        String token = authorizationHeader.substring("Bearer ".length());
+        String username = jwtUtil.getTokenSubject(token);
+        return ResponseEntity.ok(carteService.getLoansForUser(username));
+    }
 }

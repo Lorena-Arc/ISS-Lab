@@ -1,0 +1,6 @@
+<div *ngIf="book && ((!isCos && book.statusCarte.toString() === 'DISPONIBIL') || (isCos))"
+     class="d-flex row align-items-center lb-bg__primary bd mt-2 me-1 px-3 py-2" data-toggle="tooltip" title="cod unic: {{book.id}}">
+  <div class="col-6 col-lg-6">{{book.titlu}}</div>
+  <div class="col-5 col-lg-5 me-0 me-md-3 me-lg-4 me-xl-5">{{book.autor}}</div>
+  <button class="lb-btn__book" *ngIf="!isCos" (click)="borrowBook()">+</button>
+</div>
