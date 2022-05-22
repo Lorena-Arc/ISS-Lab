@@ -36,7 +36,7 @@ public class AuthController {
 //    }
 
     @PostMapping("/auth/login")
-    public ResponseEntity<Void> librarianLoginHandler(@RequestBody LoginCredentials body){
+    public ResponseEntity<Void> loginHandler(@RequestBody LoginCredentials body){
         try {
             //username;role
             UsernamePasswordAuthenticationToken authInputToken =
