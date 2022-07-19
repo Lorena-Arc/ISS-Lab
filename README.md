@@ -1,2 +1,2 @@
-# ISS-Lab
-Repo pentru tema de laborator la ingineria sistemelor soft
+# Library
+Minimalist app for gestioning a library
